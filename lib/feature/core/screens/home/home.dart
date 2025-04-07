@@ -40,7 +40,8 @@ class HomeScreen extends StatelessWidget {
                           backgroundColor:
                               dark ? MyColors.dark : MyColors.light,
                           child: RoundedImage(
-                            imageUrl: 'https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,c_scale,q_auto/cnnarabic/2023/06/21/images/243418.avif',
+                            imageUrl: 'assets/images/banner/banner.jpg',
+                            isNetworkImage: false,
                           ),
                         ),
                         SizedBox(height: MySizes.spaceBtwSection),
