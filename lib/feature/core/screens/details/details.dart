@@ -20,7 +20,7 @@ class RestaurantDetailsScreen extends StatelessWidget {
         title: Text(controller.title.value),
         actions: [
           IconButton(
-            icon: const Icon(Iconsax.star1),
+            icon: const Icon(Iconsax.star1, color: MyColors.primary,),
             onPressed: () => controller.addRating(),
           ),
         ],

@@ -25,7 +25,7 @@ class SettingsController extends GetxController{
   }
 
   // Get the saved language from storage or return default (English)
-  String get language => deviceStorage.read('language') ?? 'en';
+  String get language => deviceStorage.read('language') ?? 'ar';
 
   // Save language to storage
   Future<void> saveLanguage(String languageCode) async {

@@ -70,7 +70,9 @@ class FormSignUpWidget extends StatelessWidget {
 
           SizedBox(height: MySizes.spaceBtwSection),
           Obx(
-            () => controller.isLoading.value ? Center(child: CircularProgressIndicator()) : SizedBox(
+            () => controller.isLoading.value
+                ? Center(child: CircularProgressIndicator())
+                : SizedBox(
               width: double.infinity,
               child: ElevatedButton(
                 onPressed: () {

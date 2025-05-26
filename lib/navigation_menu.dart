@@ -30,15 +30,8 @@ class NavigationMenu extends StatelessWidget {
                   : MyColors.black.withValues(alpha: 0.1),
           destinations: [
             NavigationDestination(icon: Icon(Iconsax.home), label: 'home'.tr),
-            NavigationDestination(
-              icon: Icon(Iconsax.category),
-              label: 'categories'.tr,
-            ),
-
-            NavigationDestination(
-              icon: Icon(Iconsax.setting),
-              label: 'settings'.tr,
-            ),
+            NavigationDestination(icon: Icon(Iconsax.category), label: 'categories'.tr,),
+            NavigationDestination(icon: Icon(Iconsax.setting), label: 'settings'.tr,),
           ],
         ),
       ),

@@ -1,6 +1,8 @@
 import 'package:chef/feature/core/controllers/comments/comments.dart';
 import 'package:chef/feature/core/screens/comments/widgets/comment_dialog.dart';
+import 'package:chef/utils/constants/colors.dart';
 import 'package:chef/utils/constants/sizes.dart';
+import 'package:chef/utils/helper/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,6 +12,7 @@ class CommentsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(CommentsController());
+    final dark = HelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(
           title: Text(controller.restaurantName.value),
@@ -32,7 +35,7 @@ class CommentsScreen extends StatelessWidget {
                   (_, index) => Container(
                     padding: const EdgeInsets.all(MySizes.defaultSpace),
                     decoration: BoxDecoration(
-                      color: Colors.grey.shade200,
+                      color: dark ? MyColors.dark : MyColors.light,
                       borderRadius: BorderRadius.circular(MySizes.defaultSpace),
                     ),
                     child: Column(

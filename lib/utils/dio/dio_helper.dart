@@ -50,38 +50,4 @@ class DioHelper {
       ),
     );
   }
-
-  static Future<Response> putData({
-    required String endpoint,
-    required Map<String, dynamic> data,
-    String? token,
-  }) async {
-    return await dio!.put(
-      endpoint,
-      data: data,
-      options: Options(
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': 'Bearer $token',
-        },
-      ),
-    );
-  }
-
-  static Future<Response> deleteData({
-    required String endpoint,
-    String? token,
-  }) async {
-    return await dio!.delete(
-      endpoint,
-      options: Options(
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': 'Bearer $token',
-        },
-      ),
-    );
-  }
 }

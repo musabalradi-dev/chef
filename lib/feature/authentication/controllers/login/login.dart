@@ -18,6 +18,7 @@ class LoginController extends GetxController {
 
   login({required String email, required String password}) async {
     try {
+
       // Show loading indicator
       isLoading.value = true;
 
@@ -30,36 +31,20 @@ class LoginController extends GetxController {
       // Make a POST request to the login endpoint
       DioHelper.postData(
             endpoint: '/login',
-            data: {'email': email.trim(), 'password': password.trim()},
+            data: {
+              'email': email.trim(),
+              'password': password.trim(),
+            },
           )
           .then((value) {
             if (value.data['status'] == true) {
               // Check if the user has accepted the privacy policy
               if (privacyPolicy.value == true) {
-                // Show error message
-                // Get.snackbar(
-                //   'rememberMe'.tr,
-                //   'rememberMeMessage'.tr,
-                //   backgroundColor: Colors.orange.shade600,
-                //   colorText: Colors.white,
-                //   snackPosition: SnackPosition.BOTTOM,
-                //   duration: Duration(seconds: 4),
-                //   margin: const EdgeInsets.all(10),
-                //   borderRadius: 12,
-                //   icon: const Icon(Icons.warning_amber_rounded, color: Colors.white),
-                //   shouldIconPulse: true,
-                //   dismissDirection: DismissDirection.horizontal,
-                //   isDismissible: true,
-                //   forwardAnimationCurve: Curves.easeOutBack,
-                // );
                 // Store the token in local storage
                 deviceStorage.write('token', value.data['token']);
               }
               // Store the First Name data in local storage
-              deviceStorage.write(
-                'firstName',
-                value.data['data']['first_name'],
-              );
+              deviceStorage.write('firstName', value.data['data']['first_name'],);
               // Store the Last Name data in local storage
               deviceStorage.write('lastName', value.data['data']['last_name']);
               // Store the Last Name data in local storage

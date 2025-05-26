@@ -20,11 +20,10 @@ class MyApp extends StatelessWidget {
     final settingsController = Get.put(SettingsController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      themeMode: settingsController.theme,
+      themeMode: ThemeMode.light,
       theme: MyThemeApp.lightTheme,
       darkTheme: MyThemeApp.darkTheme,
-      home: NavigationMenu(),
-      // home: startScreen(),
+      home: startScreen(),
       translations: Languages(),
       locale: settingsController.getLocale(),
       fallbackLocale: Locale('en', 'US'),

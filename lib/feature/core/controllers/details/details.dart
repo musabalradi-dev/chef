@@ -44,7 +44,6 @@ class DetailsController extends GetxController {
             );
           })
           .catchError((error) {
-            print(error.toString());
             // Handle any errors that occur during the login process
             Get.snackbar(
               'error'.tr,

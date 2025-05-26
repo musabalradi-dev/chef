@@ -8,7 +8,7 @@ class OnBoardingController extends GetxController{
 
   // variables
   final pageController = PageController();
-  Rx<int> currentPageIndex = 0.obs;
+  final currentPageIndex = 0.obs;
   final deviceStorage = GetStorage();
 
   void updatePageIndicator(index) => currentPageIndex.value = index;
